@@ -1,28 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <router-view></router-view>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
+<script type="text/ecmascript-6">
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  mounted() {
+    //窗口尺寸改变
+    window.onresize = () => {
+      return (() => {
+        // this.$forceUpdate();//强制更新数据
+        this.$router.go(0);
+      })();
+    };
+  },
+  methods: {},
+  destroyed() {
+    // 销毁
+    window.onresize = null;
+  },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="less"  >
+*{
+    ::-webkit-scrollbar {
+       /*隐藏滚轮*/
+       display: none;
+    }
 }
+
 </style>
