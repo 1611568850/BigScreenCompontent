@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # chart
 
 ## Project setup
@@ -22,3 +23,7 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+# BigScreenCompontent
+大屏项目
+>>>>>>> refs/remotes/origin/main
